@@ -18,10 +18,9 @@
 
 	<dependencies>
 		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>4.12</version>
-			<scope>test</scope>
+			<groupId>org.bitlet</groupId>
+			<artifactId>weupnp</artifactId>
+			<version>RELEASE</version>
 		</dependency>
 	</dependencies>
 
