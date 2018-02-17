@@ -21,5 +21,5 @@ usage: upnp-util [OPTIONS]
  -r,--run       run the port mapper wizard
  -v,--version   print the version information and exit
 Example:
-    upnp-util -l
+    upnp-util -h
 ```
