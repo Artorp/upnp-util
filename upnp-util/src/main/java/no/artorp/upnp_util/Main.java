@@ -49,7 +49,7 @@ public class Main {
 	
 	private static void printUsageThenExit(Options options) {
 		HelpFormatter formatter = new HelpFormatter();
-		String footer = "Example:\n    upnp-util -l";
+		String footer = "Example:\n    upnp-util -h";
 		formatter.printHelp("upnp-util [OPTIONS]", null, options, footer);
 		System.exit(0);
 		return;
