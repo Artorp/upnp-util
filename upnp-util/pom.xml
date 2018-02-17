@@ -30,6 +30,12 @@
 	</dependencies>
 
 	<build>
+		<resources>
+			<resource>
+				<directory>src/main/resourcefiltered</directory>
+				<filtering>true</filtering>
+			</resource>
+		</resources>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -46,7 +52,7 @@
 							<transformers>
 								<transformer
 									implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-									<mainClass>no.artorp.upnp_util.App</mainClass>
+									<mainClass>no.artorp.upnp_util.Main</mainClass>
 								</transformer>
 							</transformers>
 						</configuration>
