@@ -11,6 +11,11 @@ import no.artorp.upnp_util.util.Version;
 
 public class Main {
 	public static void main(String[] args) {
+		if (args.length == 0) {
+			System.out.println("For usage information, run");
+			System.out.println("  upnp-util -h\n");
+		}
+		
 		// Parse arguments
 		CommandLineParser parser = new DefaultParser();
 		
@@ -18,9 +23,9 @@ public class Main {
 		
 		options.addOption("h", "help", false, "print this message");
 		options.addOption("v", "version", false, "print the version information and exit");
-		options.addOption("l", "list", false, "list all gateways and their port forwardings, then exit");
+		options.addOption("r", "run", false, "run the port mapper wizard");
 		
-		boolean listThenExit = false;
+		boolean runWizard = false;
 		
 		try {
 			CommandLine cmd = parser.parse(options, args);
@@ -30,14 +35,15 @@ public class Main {
 				System.out.println("upnp-util " + Version.getVersion());
 				System.exit(0);
 			}
-			listThenExit = cmd.hasOption("l");
+			runWizard = cmd.hasOption("r");
 		} catch (ParseException e) {
 			System.out.println(e.getMessage());
 			printUsageThenExit(options);
 		}
 		
 		// launch program
-		App app = new App(listThenExit);
+		
+		App app = new App(runWizard);
 		app.run();
 	}
 	

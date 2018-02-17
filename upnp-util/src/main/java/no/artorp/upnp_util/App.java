@@ -20,10 +20,10 @@ import no.artorp.upnp_util.util.Version;
 
 public class App {
 	
-	private final boolean listThenExit;
+	private final boolean runWizard;
 	
-	public App(boolean listThenExit) {
-		this.listThenExit = listThenExit;
+	public App(boolean runWizard) {
+		this.runWizard = runWizard;
 	}
 	
 	public void run() {
@@ -51,13 +51,13 @@ public class App {
 				System.out.println("\nListing gateway details of device #" + i);
 				System.out.println(readableGateway(gw));
 				
-				if (listThenExit) {
+				if (!runWizard) {
 					// list all mapping to this gateway
 					System.out.println(getGatewayMappings(gw, portMapping));
 				}
 			}
 			
-			if(listThenExit)
+			if (!runWizard)
 				return;
 			
 			if (orderedGateways.size() > 1) {
